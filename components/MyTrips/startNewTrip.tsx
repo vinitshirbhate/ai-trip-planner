@@ -1,8 +1,10 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
+import { useRouter } from "expo-router";
 
 export default function StartNewTrip() {
+  const router = useRouter();
   return (
     <View
       style={{
@@ -33,6 +35,7 @@ export default function StartNewTrip() {
         Start a new trip to explore the world!
       </Text>
       <TouchableOpacity
+        onPress={() => router.push("/create-trip/SearchPlace")}
         style={{
           backgroundColor: Colors.BLACK,
           padding: 10,
